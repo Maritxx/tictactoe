@@ -1,5 +1,5 @@
 const state = { //Creates object that you re-use.
-	gameElement: document.querySelector('.game')
+	gameElement: document.querySelector('.game'),
 	cells: Array(9).fill(null) 								//Array function takes length parameter so you don't need to re-type code.
 }
 
