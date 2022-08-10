@@ -3,12 +3,9 @@
 }
 
 :root {
-  --button-primary: #4F7DF3; /*Light blue*/
-  --text-primary: #151F29; /*Dark blue*/
-  --text-secondary: #C2D3FF; /*Pale blue*/
-  --error-primary: #FF5263; /*Pale red*/
-  --heading-primary: #969696; /*Grey*/
-  --bg-primary: #FFFFFF; /*White*/
+  --box-primary: #0096FF; /*Bright blue*/
+  --overlay-primary: #EE4B2B; /*Bright red*/
+  --text-primary: #FFFFFF; /*White*/
   --main-font: 'Libre Franklin', 'Arial', sans-serif;
 }
 
