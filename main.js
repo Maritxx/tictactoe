@@ -1,8 +1,10 @@
 const state = { 
 //Creates object that you re-use.
 gameElement: document.querySelector('.game'),
-cells: Array(9).fill(null) 	
+cells: Array(9).fill(null),
 	//Array function takes length parameter so you don't need to re-type code.
+
+symbols: ['o', 'x']
 }
 
 
@@ -21,10 +23,10 @@ function drawBoard() {
 			cellSymbol.classList.add('symbol')
 
 			cellContainer.append(cellSymbol)
-
 		} else { //If not, this code runs. 
 			cellContainer.addEventListener('click', function () {
-				state.cells[i] = 'x'
+				state.symbols.reverse()
+				state.cells[i] = state.symbols[0]
 
 				drawBoard() 
 				//Re-draws the grid again after something is clicked.
