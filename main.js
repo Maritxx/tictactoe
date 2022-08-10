@@ -15,6 +15,8 @@ function drawBoard() {
 		if (state.cells[i]) { //Does the cell have something in it? Then the code runs.
 			const cellSymbol = document.createElement('p')
 			cellSymbol.innerText = 'this is text'
+			cellSymbol.classList.add('.symbol')
+
 			cellContainer.append(cellSymbol)
 
 		} else { //If not, this code runs. 
