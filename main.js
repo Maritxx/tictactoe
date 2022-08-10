@@ -51,7 +51,7 @@ cells: Array(9).fill(null),
 
 				if (checkForWinner()) {
 					state.gameFinished = true
-					console.log("EY YOU WIN!")
+					drawMessage()
 
 				}
 			})
@@ -61,6 +61,20 @@ cells: Array(9).fill(null),
 		state.gameElement.append(cellContainer)
 	}
 }
+
+
+function drawMessage() {
+	const overlay = document.createElement('div')
+	banner.classList.add('overlay')
+
+	const h1 = document.createElement('h1')
+	h1.innerText = 'You win, be proud of yourself, I guess'
+
+	overlay.append(h1)
+
+	state.gameElement.append(overlay)
+}
+
 
 function checkForWinner() {
 	return state.winningCombinations.some(function (combo) {
