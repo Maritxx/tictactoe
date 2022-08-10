@@ -1,6 +1,8 @@
-const state = { //Creates object that you re-use.
+const state = { 
+//Creates object that you re-use.
 	gameElement: document.querySelector('.game'),
-	cells: Array(9).fill(null) 								//Array function takes length parameter so you don't need to re-type code.
+	cells: Array(9).fill(null) 	
+	//Array function takes length parameter so you don't need to re-type code.
 }
 
 
@@ -10,8 +12,20 @@ function drawBoard() {
 		cellContainer.classList.add('cell')
 
 
+		if (state.cells[i]) { //Does the cell have something in it? Then the code runs.
+			const cellSymbol = document.creatElement('p')
+			cellSymbol.innerText = 'this is text'
+
+		} else { //If not, this code runs. 
+
+		}
+
+
 		cellContainer.addEventListener('click', function () {
 			state.cells[i] = 'x'
+
+			drawBoard() 
+			//Re-draws the grid again after something is clicked.
 		})
 
 
