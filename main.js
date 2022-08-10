@@ -6,8 +6,8 @@ function drawBoard() {
 		cellContainer.classList.add('cell')
 
 
-		cell.addEventListener('click', function () { //Function at this place means only this cell has access to the function.
-			console.log("Something was clicked")
+		cellContainer.addEventListener('click', function () {
+			console.log(`Cell ${i} was clicked`)
 		})
 
 
