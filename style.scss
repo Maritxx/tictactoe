@@ -25,3 +25,19 @@ body {
 	line-height: 300px;
 }
 
+
+.overlay {
+	position: absolute;
+	background-color: var(--overlay-primary);
+	opacity: 80%;
+	width: 1200px;
+	margin-left: -140px;
+	margin-top: 250px;
+	height: 400px;
+
+	h1 {
+		color: var(--text-primary);
+		text-align: center;
+		line-height: 400px;
+	}
+}
