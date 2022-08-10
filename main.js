@@ -23,7 +23,7 @@ cells: Array(9).fill(null),
 	function drawBoard() {
 		state.gameElement.innerHTML = ''
 
-		for (let i = 0; i < state.cells.length; i++) {
+		for (let i = 0; i < 9; i++) {
 			const cellContainer = document.createElement('div')
 			cellContainer.classList.add('cell')
 
@@ -68,7 +68,7 @@ function checkForWinner() {
 			return state.cells[index]
 		})
 
-
+		// the array does NOT have a null -> AND -> all of the values are the same. Result in boolean.
 		return !(cells.includes(null)) && new Set(cells).size === 1
 	})
 }
