@@ -11,7 +11,7 @@ function drawBoard() {
 
 
 		cellContainer.addEventListener('click', function () {
-			console.log(`Cell ${i} was clicked`)
+			state.cells[i] = 'x'
 		})
 
 
