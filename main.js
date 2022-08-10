@@ -14,17 +14,18 @@ cells: Array(9).fill(null),
 		[2, 5, 8], //Right column
 		[0, 4, 8], //Diag left
 		[2, 4, 6], //Diag right
-	]
-}
+		],
+
+		gamefinished: false
+	}
 
 
-function drawBoard() {
-	console.log("DrawBoard has run");
-	state.gameElement.innerHTML = ''
+	function drawBoard() {
+		state.gameElement.innerHTML = ''
 
-	for (let i = 0; i < state.cells.length; i++) {
-		const cellContainer = document.createElement('div')
-		cellContainer.classList.add('cell')
+		for (let i = 0; i < state.cells.length; i++) {
+			const cellContainer = document.createElement('div')
+			cellContainer.classList.add('cell')
 
 
 		if (state.cells[i]) { //Does the cell have something in it? Then the code runs.
@@ -35,6 +36,10 @@ function drawBoard() {
 			cellContainer.append(cellSymbol)
 		} else { //If not, this code runs. 
 			cellContainer.addEventListener('click', function () {
+				if (state.gameFinished) {
+					return
+				}
+
 				state.symbols.reverse()
 				const currentPlayerSymbol = state.symbols[0]
 
@@ -45,7 +50,8 @@ function drawBoard() {
 				//Re-draws the grid again after something is clicked.
 
 				if (checkForWinner()) {
-
+					state.gameFinished = true
+					console.log("EY YOU WIN!")
 
 				}
 			})
@@ -61,8 +67,10 @@ function checkForWinner() {
 		const cells = combo.map(function (index) {
 			return state.cells[index]
 		})
-	})
 
+
+		return !(cells.includes(null)) && new Set(cells).size === 1
+	})
 }
 
 drawBoard();
