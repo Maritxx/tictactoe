@@ -7,6 +7,9 @@ cells: Array(9).fill(null)
 
 
 function drawBoard() {
+	console.log("DrawBoard has run");
+	state.gameElement.innerHTML = ''
+
 	for (let i = 0; i < 9; i++) {
 		const cellContainer = document.createElement('div')
 		cellContainer.classList.add('cell')
@@ -14,8 +17,8 @@ function drawBoard() {
 
 		if (state.cells[i]) { //Does the cell have something in it? Then the code runs.
 			const cellSymbol = document.createElement('p')
-			cellSymbol.innerText = 'this is text'
-			cellSymbol.classList.add('.symbol')
+			cellSymbol.innerText = 'x'
+			cellSymbol.classList.add('symbol')
 
 			cellContainer.append(cellSymbol)
 
