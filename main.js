@@ -15,21 +15,22 @@ function drawBoard() {
 		if (state.cells[i]) { //Does the cell have something in it? Then the code runs.
 			const cellSymbol = document.creatElement('p')
 			cellSymbol.innerText = 'this is text'
+			cellContainer.append(cellSymbol)
 
 		} else { //If not, this code runs. 
+			cellContainer.addEventListener('click', function () {
+				state.cells[i] = 'x'
+
+				drawBoard() 
+				//Re-draws the grid again after something is clicked.
+		})
+
+
 
 		}
 
 
-		cellContainer.addEventListener('click', function () {
-			state.cells[i] = 'x'
-
-			drawBoard() 
-			//Re-draws the grid again after something is clicked.
-		})
-
-
-		gameElement.append(cellContainer)
+		state.gameElement.append(cellContainer)
 	}
 }
 
