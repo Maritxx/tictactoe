@@ -54,6 +54,10 @@ cells: Array(9).fill(null),
 					drawMessage()
 
 				}
+
+				if (checkForDraw()) {
+					state.gameFinished = true
+				}
 			})
 		}
 
@@ -65,7 +69,7 @@ cells: Array(9).fill(null),
 
 function drawMessage() {
 	const overlay = document.createElement('div')
-	banner.classList.add('overlay')
+	overlay.classList.add('overlay')
 
 	const h1 = document.createElement('h1')
 	h1.innerText = 'You win, be proud of yourself, I guess'
@@ -73,6 +77,13 @@ function drawMessage() {
 	overlay.append(h1)
 
 	state.gameElement.append(overlay)
+}
+
+
+function checkForDaw() {
+	return state.cells.every(function (cellContainer) {
+		return cellContainer !==null
+	})
 }
 
 
