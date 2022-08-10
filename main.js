@@ -43,12 +43,26 @@ function drawBoard() {
 
 				drawBoard() 
 				//Re-draws the grid again after something is clicked.
+
+				if (checkForWinner()) {
+
+
+				}
 			})
 		}
 
 
 		state.gameElement.append(cellContainer)
 	}
+}
+
+function checkForWinner() {
+	return state.winningCombinations.some(function (combo) {
+		const cells = combo.map(function (index) {
+			return state.cells[index]
+		})
+	})
+
 }
 
 drawBoard();
